@@ -1,0 +1,44 @@
+import java.awt.event.*;
+import java.awt.*;
+import java.applet.*;
+public class smile extends Applet implements MouseListener,MouseMotionListener
+{      boolean flag; 
+	public void init()
+{ this.addMouseListener(this);
+  this.addMouseMotionListener(this);
+  
+	}
+public void mouseClicked(MouseEvent e)
+{        
+	if(flag)
+            flag=false;
+	else
+            flag=true;
+            repaint();
+            
+}  
+public void mouseEntered(MouseEvent e)
+  {}
+public void mouseExited(MouseEvent e)
+  {}
+public void mousePressed(MouseEvent e)
+  {}
+public void mouseReleased(MouseEvent e)
+ { }
+public void mouseMoved(MouseEvent e)
+  {}
+public void mouseDragged(MouseEvent e)
+  {}	
+public void paint(Graphics g)
+{  
+g.setColor(Color.yellow);
+    g.fillOval(93,93,50,50);
+    g.setColor(Color.black);
+    g.fillOval(105,105,6,6);
+    g.fillOval(125,105,6,6);
+    if(flag)
+    g.drawArc(110,120,20,10,0,-180);
+    else
+    g.drawArc(110,120,20,10,0,180);	
+}		
+}
